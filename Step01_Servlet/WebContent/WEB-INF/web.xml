@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>Step01_Servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- annotation
+  		@WebServlet("/person") 
+  	과 같다. 이게 더 편하지만
+  	아래의 web.xml 방법도 알아야 해. 나중에 혼용해서 쓴다! -->
+  
+  
+  <!-- 서블릿 정의하기  <ser + ctrl + space-->
+  <servlet>
+  	<!-- <s + ctrl + space -->
+  	<!-- 서블릿명 (맘대로 정해두 됨) -->
+  	<servlet-name>PersonServlet</servlet-name>
+  	<!-- 패키지명.서블릿명 -->
+  	<servlet-class>test.servlet.PersonServlet</servlet-class>
+  </servlet>
+  
+  <!-- 서블릿 맵핑하기 -->
+  <servlet-mapping>
+  	<servlet-name>PersonServlet</servlet-name>
+  	<!-- annotation 명 -->
+  	<url-pattern>/person</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>PictureServlet</servlet-name>
+  	<servlet-class>test.servlet.PictureServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>PictureServlet</servlet-name>
+  	<url-pattern>/today/picture</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>FortunePictureServlet</servlet-name>
+  	<servlet-class>test.servlet.FortunePictureServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FortunePictureServlet</servlet-name>
+  	<url-pattern>/today/fortune/fortunePicture</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
